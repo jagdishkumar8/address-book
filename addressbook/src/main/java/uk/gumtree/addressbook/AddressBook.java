@@ -2,18 +2,11 @@ package uk.gumtree.addressbook;
 
 import java.util.Date;
 
-public class AddressBook {
-	int id;
+public class AddressBook {	
 	String name;
 	Sex sex;
-	Date dateOfBirth;
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	Date dateOfBirth;	
+
 	public String getName() {
 		return name;
 	}
