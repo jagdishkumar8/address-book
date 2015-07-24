@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class AddressBookOperation {
@@ -41,8 +42,12 @@ public class AddressBookOperation {
 		return addressBook.size();
 	}
 	
-	public AddressBook getOldestPerson(List<AddressBook> addressBooks){
-		return null;
+	public String getOldestPerson(List<AddressBook> addressBooks){
+		AddressBookComparator<AddressBook> ageComparator = new AddressBookComparator<AddressBook>();
+		Optional<AddressBook> oldest = addressBooks.stream()
+									.max(ageComparator);
+		
+		return ( oldest.isPresent() ) ? oldest.get().name : null ;
 	}
 	
 	public int getDaysDifferenceBetweenDOB(AddressBook address1, AddressBook address2){

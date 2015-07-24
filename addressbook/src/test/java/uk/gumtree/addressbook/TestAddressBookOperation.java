@@ -1,7 +1,6 @@
 package uk.gumtree.addressbook;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.List;
@@ -33,9 +32,9 @@ public class TestAddressBookOperation {
 		assertEquals("There are 3 males in AddressBook", 3, operation.getNoOfMales(addressBooks));		
 	}
 
-	
+	@Test
 	public void testGetOldestPerson() {
-		fail("Not yet implemented");
+		assertEquals("Wes jackson is the olderst Person males in AddressBook", "Wes Jackson", operation.getOldestPerson(addressBooks));		
 	}
 
 	
