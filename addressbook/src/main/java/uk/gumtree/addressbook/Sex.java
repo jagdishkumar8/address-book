@@ -1,7 +1,7 @@
 package uk.gumtree.addressbook;
 
 public enum Sex {
-	FEMALE("Male"),
+	FEMALE("Female"),
 	MALE("Male");
 	
 	public String sex;

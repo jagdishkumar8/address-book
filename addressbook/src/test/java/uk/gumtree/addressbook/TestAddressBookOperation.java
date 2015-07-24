@@ -12,22 +12,25 @@ import org.junit.Test;
 public class TestAddressBookOperation {
 	AddressBookOperation operation;
 	String filePath;
+	List<AddressBook> addressBooks;
 	
 	@Before
 	public void setUp() throws Exception {
 		filePath = "src/test/resources/AddressBook";
 		operation = new AddressBookOperation();
+		addressBooks = operation.getAddressBook(filePath);
 	}
 	
 	@Test
 	public void getAddressBook(){
 		final List<AddressBook> addressBooks = operation.getAddressBook(filePath);
 		
-		assertEquals("There are 5 records in AddressBoo", 5, addressBooks.size());
+		assertEquals("There are 5 records in AddressBook", 5, addressBooks.size());
 	}
 	
+	@Test
 	public void testGetNoOfMales() throws IOException {
-		fail("Not yet implemented");
+		assertEquals("There are 3 males in AddressBook", 3, operation.getNoOfMales(addressBooks));		
 	}
 
 	

@@ -25,18 +25,18 @@ public class Utility {
 		List<String> columns = Arrays.asList(addressBookStr.split(","));
 		
 		if(null != columns){
-			final String name = columns.get(0);
+			final String name = columns.get(0).trim();
 			if( !name.isEmpty()){
 				addressBook.setName(name);
 			}
 			
-			final String sex = columns.get(1);
+			final String sex = columns.get(1).trim();
 			if( ! sex.isEmpty()){
 				addressBook.setSex((sex.equals(Sex.FEMALE.value())) ? Sex.FEMALE : Sex.MALE);
 			}
 			
 			try {
-				final String dateOfBirth = columns.get(2);
+				final String dateOfBirth = columns.get(2).trim();
 				if( !dateOfBirth.isEmpty()){
 					
 						addressBook.setDateOfBirth(getDate(dateOfBirth));

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AddressBookOperation {
 	
@@ -32,7 +33,12 @@ public class AddressBookOperation {
 	}
 	
 	public int getNoOfMales(List<AddressBook> addressBooks){
-		return 0;
+		List<AddressBook> addressBook = 
+					addressBooks.stream()
+						.filter(e -> e.sex.equals(Sex.MALE))
+						.collect(Collectors.toList());
+		
+		return addressBook.size();
 	}
 	
 	public AddressBook getOldestPerson(List<AddressBook> addressBooks){
