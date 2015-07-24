@@ -34,7 +34,7 @@ public class TestAddressBookOperation {
 
 	@Test
 	public void testGetOldestPerson() {
-		assertEquals("Wes jackson is the olderst Person males in AddressBook", "Wes Jackson", operation.getOldestPerson(addressBooks));		
+		assertEquals("Wes jackson is the olderst Person in AddressBook", "Wes Jackson", operation.getOldestPerson(addressBooks));		
 	}
 
 	
