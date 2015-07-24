@@ -45,7 +45,8 @@ public class AddressBookOperation {
 		return null;
 	}
 	
-	public long getDaysDifferenceBetweenDOB(AddressBook address1, AddressBook address2){
-		return 0;
+	public int getDaysDifferenceBetweenDOB(AddressBook address1, AddressBook address2){
+		utility = new Utility();
+		return utility.getDaysBetweenDates(address1.dateOfBirth, address2.dateOfBirth);
 	}
 }

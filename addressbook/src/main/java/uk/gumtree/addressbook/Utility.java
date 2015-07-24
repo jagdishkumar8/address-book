@@ -11,6 +11,8 @@ import java.util.Date;
 import java.util.List;
 
 public class Utility {	
+	private final int DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
+	
 	public BufferedReader getFileReader(String path) throws UtilityException{
 		try {
 			return new BufferedReader(new FileReader(new File(path)));
@@ -54,6 +56,11 @@ public class Utility {
 	public Date getDate(String dateStr) throws ParseException{
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		return format.parse(dateStr);
+	}
+	
+	public int getDaysBetweenDates(Date startDate, Date toDate){
+		long differenceInMilliSeconds = toDate.getTime() - startDate.getTime();
+		return (int) (differenceInMilliSeconds / DAY_IN_MILLISECONDS);
 	}
 
 }

@@ -39,8 +39,9 @@ public class TestAddressBookOperation {
 	}
 
 	
+	@Test
 	public void testGetDaysDifferenceBetweenDOB() {		
-		fail("Not yet implemented");
+		assertEquals("There is 2862 days between Bill and Paul", 2862, operation.getDaysDifferenceBetweenDOB(addressBooks.get(0), addressBooks.get(1)));	
 	}
 
 }
