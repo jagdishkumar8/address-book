@@ -12,6 +12,7 @@ import java.util.List;
 
 public class Utility {	
 	private final int DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
+	private final String DATE_FORMAT = "dd/MM/yyyy";
 	
 	public BufferedReader getFileReader(String path) throws UtilityException{
 		try {
@@ -24,7 +25,7 @@ public class Utility {
 	public AddressBook mapStringToAddressBook(String addressBookStr){
 		AddressBook addressBook = new AddressBook();
 		
-		List<String> columns = Arrays.asList(addressBookStr.split(","));
+		final List<String> columns = Arrays.asList(addressBookStr.split(","));
 		
 		if(null != columns){
 			final String name = columns.get(0).trim();
@@ -54,12 +55,12 @@ public class Utility {
 	}
 	
 	public Date getDate(String dateStr) throws ParseException{
-		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		final SimpleDateFormat format = new SimpleDateFormat(DATE_FORMAT);
 		return format.parse(dateStr);
 	}
 	
 	public int getDaysBetweenDates(Date startDate, Date toDate){
-		long differenceInMilliSeconds = toDate.getTime() - startDate.getTime();
+		final long differenceInMilliSeconds = toDate.getTime() - startDate.getTime();
 		return (int) (differenceInMilliSeconds / DAY_IN_MILLISECONDS);
 	}
 
